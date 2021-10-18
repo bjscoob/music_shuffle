@@ -4,11 +4,29 @@ import ReactLoading from "react-loading";
 import YoutubeEmbed from "./YoutubeEmbed";
 import Slots from "./Slots";
 import "./styles.css";
+import { Dimensions } from "react-native";
 
 export class App extends React.Component {
   constructor(props) {
     super(props);
+    /**
+     * Returns true if the screen is in portrait mode
+     */
+    const isPortrait = () => {
+      const dim = Dimensions.get("screen");
+      console.log(dim.height >= dim.width);
+      return dim.height >= dim.width;
+    };
+
+    // Event Listener for orientation changes
+    Dimensions.addEventListener("change", () => {
+      this.setState({
+        orientation: isPortrait() ? "portrait" : "landscape"
+      });
+    });
+
     this.state = {
+      orientation: isPortrait() ? "portrait" : "landscape",
       playlist: [],
       shuffleList: [],
       connected: "Not Connected",
@@ -19,6 +37,7 @@ export class App extends React.Component {
     this.shuffledList = [];
     this.shuffleIndex = -1;
   }
+
   async getPlaylist() {
     this.setState({
       loading: true
@@ -76,7 +95,13 @@ export class App extends React.Component {
       <div className="App">
         {this.state.connected == "Connected" ? (
           <div>
-            <div id="curtainCont" style={{ display: this.state.firstloaded }}>
+            <div
+              id="curtainCont"
+              style={{
+                display: this.state.firstloaded,
+                marginTop: this.state.orientation == "portrait" ? "-20%" : "0%"
+              }}
+            >
               <div id="curtain1">
                 <img
                   id="r1"
@@ -96,13 +121,14 @@ export class App extends React.Component {
             </div>
             <div className="wheel_cont"></div>
             <div className="record_cont"></div>
-            <div className="mainUI">
+            <div className={"mainui_" + this.state.orientation}>
               <br />
               <br />
-              <div id="needle"></div>
+              <div id={"needle_" + this.state.orientation}></div>
               <Slots
                 playlist={this.state.playlist}
                 shuffledList={this.state.shuffleList}
+                orientation={this.state.orientation}
               />
             </div>
           </div>
@@ -111,6 +137,8 @@ export class App extends React.Component {
             <div
               style={{
                 margin: "auto",
+                paddingTop:
+                  this.state.orientation == "portrait" ? "50%" : "10%",
                 width: "75px",
                 visibility: this.state.loading ? "visible" : "hidden"
               }}

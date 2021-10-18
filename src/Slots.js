@@ -92,11 +92,11 @@ export default class Slots extends Component {
           className={!this.state.rolling ? "roll rolling" : "roll"}
           onClick={!this.state.rolling && this.roll}
           disabled={this.state.rolling}
-          id="shuffleBtn"
+          id={"shuffleBtn_" + this.props.orientation}
         >
           {this.state.rolling ? "SHUFFLING..." : "SHUFFLE"}
         </div>
-        <div className="slot">
+        <div className={"slot_" + this.props.orientation}>
           <section>
             <div className="container" ref={this.slotRef[0]}>
               <div>
@@ -155,14 +155,14 @@ export default class Slots extends Component {
               </div>
             </div>
           </section>
-          <h2>
+          <h2 class={this.props.orientation}>
             {this.state.title1.split("-")[0] +
               "\n" +
               this.state.title1.split("-")[1]}
           </h2>
         </div>
 
-        <div className="slot">
+        <div className={"slot_" + this.props.orientation}>
           <section>
             <div className="container" ref={this.slotRef[1]}>
               <div>
@@ -221,13 +221,13 @@ export default class Slots extends Component {
               </div>
             </div>
           </section>
-          <h2>
+          <h2 class={this.props.orientation}>
             {this.state.title2.split("-")[0] +
               "\n" +
               this.state.title2.split("-")[1]}
           </h2>
         </div>
-        <div className="slot">
+        <div className={"slot_" + this.props.orientation}>
           <section>
             <div className="container" ref={this.slotRef[2]}>
               <div>
@@ -286,7 +286,7 @@ export default class Slots extends Component {
               </div>
             </div>
           </section>
-          <h2>
+          <h2 class={this.props.orientation}>
             {this.state.title3.split("-")[0] +
               "\n" +
               this.state.title3.split("-")[1]}

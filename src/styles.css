@@ -94,6 +94,11 @@ input:focus {
 #root {
   height: 100%;
 }
+.navBar_landscape {
+  background: black;
+  height: 100px;
+  margin-top: 9.7%;
+}
 .wheel_cont {
   background: url("https://jax-apps.com/images/wheel.svg");
   background-size: 100%;

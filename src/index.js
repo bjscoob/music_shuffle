@@ -159,6 +159,7 @@ export class App extends React.Component {
             />
           </div>
         )}
+        <div className={"navBar_" + this.state.orientation}></div>
       </div>
     );
   }

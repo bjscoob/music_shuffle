@@ -6,7 +6,7 @@
 body {
   width: 100%;
   height: 100%;
-  background: radial-gradient(#27903a, #02463a);
+  background: #27903a;
   background-size: 100%;
   overflow: hidden;
   margin: 0;
@@ -38,7 +38,7 @@ html {
   border: none;
   border-radius: 3px;
   background: #c08946;
-  box-shadow: 0px 5px 15px #f0d26c;
+  box-shadow: 0px 5px 5px grey;
 }
 input:focus {
   outline: none;
@@ -47,7 +47,7 @@ input:focus {
 #loadScreen {
   height: 100%;
   width: 100%;
-  background: red;
+  background: white;
 }
 #curtainCont {
   position: fixed;
@@ -83,24 +83,16 @@ input:focus {
   animation: slideCurtain2 2s forwards;
   animation-delay: 2s;
 }
-#shuffleBtn_portrait {
+#shuffleBtn {
   margin: auto;
   margin-bottom: 1%;
   margin-top: -20%;
 }
-#shuffleBtn_landscape {
-  margin: auto;
-}
 #root {
   height: 100%;
 }
-.navBar_landscape {
-  background: black;
-  height: 100px;
-  margin-top: 9.7%;
-}
 .wheel_cont {
-  background: url("https://jax-apps.com/images/wheel.svg");
+  background: url("https://jax-apps.com/images/wheelv2.svg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -145,7 +137,7 @@ input:focus {
   -ms-animation: spin3 5s infinite linear;
   animation: spin3 5s infinite linear;
 }
-#needle_landscape {
+#needle {
   background: url("https://jax-apps.com/images/needle.svg");
   background-size: 70%;
   background-position: center;
@@ -170,76 +162,26 @@ input:focus {
   -ms-animation: spin3 5s infinite linear;
   animation: spin3 5s infinite linear;*/
 }
-#needle_portrait {
-  background: url("https://jax-apps.com/images/needle.svg");
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 55%;
-  height: 15%;
-  width: 15%;
-  margin-left: 42.5%;
-  margin-top: -15%;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-  /*animation-timing-function: linear;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 10% 10%;
-  -webkit-animation: spin3 5s infinite linear;
-  -moz-animation: spin3 5s infinite linear;
-  -o-animation: spin3 5s infinite linear;
-  -ms-animation: spin3 5s infinite linear;
-  animation: spin3 5s infinite linear;*/
-}
-.mainui_landscape {
+.mainUI {
   position: relative;
+  margin: 13%;
   z-index: 0;
 }
-.mainui_portrait {
-  position: relative;
-  z-index: 0;
-  margin-top: 20%;
-}
-.slot_landscape {
+.slot {
   position: relative;
   display: inline-block;
-  padding-right: 5%;
+  /*Mobile should be 100px x 80 px*/
+  padding-right: 3%;
   width: 21%;
-  margin-top: 17%;
-}
-.slot_portrait {
-  position: relative;
-  display: inline-block;
-  padding-right: 18%;
-  width: 21%;
-  margin-top: 12%;
-  margin-left: -7%;
+  margin-top: 30%;
 }
 h2 {
-  text-shadow: 0px 0px 12px black;
-  color: white;
-}
-h2.landscape {
   font-size: 12px;
   position: absolute;
-  margin-top: 40%;
-  margin-left: 26%;
+  margin-top: 65%;
   white-space: pre-line;
   text-align: left;
   padding: 0px;
-}
-h2.portrait {
-  font-size: 12px;
-  position: absolute;
-  margin-top: 55%;
-  white-space: pre-line;
-  text-align: left;
-  padding: 0px;
-  margin-left: 27%;
 }
 section {
   position: absolute;
@@ -257,8 +199,7 @@ section {
   font-size: 25px;
   line-height: 60px;
   cursor: default;
-  margin-left: 23%;
-  box-shadow: 0px 0px 12px white;
+  margin-left: 10%;
 }
 
 .container {
@@ -394,6 +335,68 @@ section {
 @-webkit-keyframes spin3 {
   0% {
     -webkit-transform: rotate(0deg);
+    margin-top: 0%;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@-moz-keyframes spin3 {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+  }
+}
+@-o-keyframes spin3 {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(-360deg);
+  }
+}
+
+@-ms-keyframes spin3 {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(-360deg);
+  }
+}
+
+@-keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@-ms-keyframes spin1 {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-keyframes spin1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin3 {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(-360deg);
@@ -430,8 +433,5 @@ section {
 @-keyframes spin3 {
   0% {
     transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
   }
 }

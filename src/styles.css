@@ -31,6 +31,9 @@ html {
   width: 100%;
   position: absolute;
 }
+.col-xs {
+  margin-left: -2.5%;
+}
 #password {
   margin: 0 auto;
   color: #f0d26c;
@@ -43,18 +46,21 @@ html {
 input:focus {
   outline: none;
 }
-
+.greytext {
+  color: white;
+}
 #loadScreen {
   height: 100%;
   width: 100%;
   background: white;
+  margin-top: 15%;
 }
 #curtainCont {
   position: fixed;
   z-index: 200;
   height: 100%;
   width: 100%;
-  margin-top: -13%;
+  margin-top: 2%;
 }
 #curtain1,
 #curtain2 {
@@ -83,13 +89,22 @@ input:focus {
   animation: slideCurtain2 2s forwards;
   animation-delay: 2s;
 }
+.black_backdrop {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 212, 255, 0) 100%
+  );
+}
 #shuffleBtn {
   margin: auto;
   margin-bottom: 1%;
-  margin-top: -20%;
+  margin-top: 100%;
 }
 #root {
   height: 100%;
+  margin-top: -15%;
 }
 .wheel_cont {
   background: url("https://jax-apps.com/images/wheelv2.svg");
@@ -168,26 +183,32 @@ input:focus {
   z-index: 0;
 }
 .slot {
-  position: relative;
+  /* position: relative;
   display: inline-block;
-  /*Mobile should be 100px x 80 px*/
+  /*Mobile should be 100px x 80 px
   padding-right: 3%;
   width: 21%;
   margin-top: 30%;
+  */
 }
 h2 {
   font-size: 12px;
-  position: absolute;
-  margin-top: 65%;
+  position: fixed;
+  margin-top: 25%;
   white-space: pre-line;
   text-align: left;
-  padding: 0px;
+  color: #b5b5b5;
+  width: 22%;
+  padding-left: 2.5%;
+  padding-right: 10%;
+  width: 22%;
+  overflow-wrap: break-word;
 }
 section {
   position: absolute;
   border-radius: 15px !important;
   border: 3px solid black !important;
-  width: 100px;
+  width: 33%;
   height: 70px;
   overflow: hidden;
   background-color: grey;
@@ -199,7 +220,6 @@ section {
   font-size: 25px;
   line-height: 60px;
   cursor: default;
-  margin-left: 10%;
 }
 
 .container {

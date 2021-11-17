@@ -1,4 +1,5 @@
 import { createRef, Component } from "react";
+import { Grid, Row, Col } from "react-flexbox-grid";
 import YoutubeEmbed from "./YoutubeEmbed";
 import "./styles.css";
 
@@ -88,209 +89,216 @@ export default class Slots extends Component {
   render() {
     return (
       <div className="SlotMachine">
+        <Row>
+          <Col xs>
+            {" "}
+            <div className="slot">
+              <section>
+                <div className="container" ref={this.slotRef[0]}>
+                  <div>
+                    <span>
+                      <YoutubeEmbed embedId={this.state.vid1} />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                </div>
+              </section>
+              <h2>
+                {this.state.title1.split("-")[0] + "\n"}{" "}
+                <span class="greytext">{this.state.title1.split("-")[1]}</span>
+              </h2>
+            </div>
+          </Col>
+          <Col xs>
+            {" "}
+            <div className="slot">
+              <section>
+                <div className="container" ref={this.slotRef[1]}>
+                  <div>
+                    <span>
+                      <YoutubeEmbed embedId={this.state.vid2} />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                </div>
+              </section>
+              <h2>
+                {this.state.title2.split("-")[0] + "\n"}{" "}
+                <span class="greytext">{this.state.title2.split("-")[1]}</span>
+              </h2>
+            </div>
+          </Col>
+          <Col xs>
+            {" "}
+            <div className="slot">
+              <section>
+                <div className="container" ref={this.slotRef[2]}>
+                  <div>
+                    <span>
+                      <YoutubeEmbed embedId={this.state.vid3} />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                  <div>
+                    <span>
+                      <YoutubeEmbed />
+                    </span>
+                  </div>
+                </div>
+              </section>
+              <h2>
+                {this.state.title3.split("-")[0] + "\n"}{" "}
+                <span class="greytext">{this.state.title3.split("-")[1]}</span>
+              </h2>
+            </div>
+          </Col>
+        </Row>
         <div
           className={!this.state.rolling ? "roll rolling" : "roll"}
           onClick={!this.state.rolling && this.roll}
           disabled={this.state.rolling}
-          id={"shuffleBtn_" + this.props.orientation}
+          id="shuffleBtn"
         >
           {this.state.rolling ? "SHUFFLING..." : "SHUFFLE"}
-        </div>
-        <div className={"slot_" + this.props.orientation}>
-          <section>
-            <div className="container" ref={this.slotRef[0]}>
-              <div>
-                <span>
-                  <YoutubeEmbed embedId={this.state.vid1} />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-            </div>
-          </section>
-          <h2 class={this.props.orientation}>
-            {this.state.title1.split("-")[0] +
-              "\n" +
-              this.state.title1.split("-")[1]}
-          </h2>
-        </div>
-
-        <div className={"slot_" + this.props.orientation}>
-          <section>
-            <div className="container" ref={this.slotRef[1]}>
-              <div>
-                <span>
-                  <YoutubeEmbed embedId={this.state.vid2} />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-            </div>
-          </section>
-          <h2 class={this.props.orientation}>
-            {this.state.title2.split("-")[0] +
-              "\n" +
-              this.state.title2.split("-")[1]}
-          </h2>
-        </div>
-        <div className={"slot_" + this.props.orientation}>
-          <section>
-            <div className="container" ref={this.slotRef[2]}>
-              <div>
-                <span>
-                  <YoutubeEmbed embedId={this.state.vid3} />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-              <div>
-                <span>
-                  <YoutubeEmbed />
-                </span>
-              </div>
-            </div>
-          </section>
-          <h2 class={this.props.orientation}>
-            {this.state.title3.split("-")[0] +
-              "\n" +
-              this.state.title3.split("-")[1]}
-          </h2>
         </div>
       </div>
     );

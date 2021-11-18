@@ -157,7 +157,7 @@ input:focus {
   background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 55%;
+  padding-top: 164%;
   height: 15%;
   width: 15%;
   margin-left: 42.5%;
@@ -209,7 +209,7 @@ section {
   border-radius: 15px !important;
   border: 3px solid black !important;
   width: 33%;
-  height: 70px;
+  height: 15%;
   overflow: hidden;
   background-color: grey;
   border-radius: 2px;
@@ -453,5 +453,82 @@ section {
 @-keyframes spin3 {
   0% {
     transform: rotate(0deg);
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  section {
+    height: 14%;
+  }
+  #needle {
+    padding-top: 174%;
+  }
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+  section {
+    height: 16%;
+  }
+  #needle {
+    padding-top: 60.5%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 500px) and (orientation: portrait) {
+  section {
+    height: 16%;
+  }
+  #needle {
+    padding-top: 208%;
+  }
+}
+@media only screen and (max-width: 375px) and (orientation: portrait) {
+  #needle {
+    padding-top: 207.5%;
+  }
+}
+@media only screen and (max-width: 320px) and (orientation: portrait) {
+  #needle {
+    display: none;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  section {
+    height: 17.5%;
+  }
+  #needle {
+    padding-top: 128%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  section {
+    height: 18.5%;
+  }
+  #needle {
+    padding-top: 108%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1024px) {
+  section {
+    height: 19.5%;
+  }
+  #needle {
+    padding-top: 85%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1030px) {
+  section {
+    height: 19.5%;
+  }
+  #needle {
+    padding-top: 67.5%;
   }
 }

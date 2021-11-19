@@ -472,6 +472,9 @@ section {
   #needle {
     padding-top: 60.5%;
   }
+  #shuffleBtn {
+    margin-top: 60%;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -485,7 +488,10 @@ section {
 }
 @media only screen and (max-width: 375px) and (orientation: portrait) {
   #needle {
-    padding-top: 207.5%;
+    padding-top: 167.5%;
+  }
+  #shuffleBtn {
+    margin-top: 138%;
   }
 }
 @media only screen and (max-width: 320px) and (orientation: portrait) {
@@ -499,7 +505,10 @@ section {
     height: 17.5%;
   }
   #needle {
-    padding-top: 128%;
+    padding-top: 63.5%;
+  }
+  #shuffleBtn {
+    margin-top: 60%;
   }
 }
 
@@ -514,21 +523,24 @@ section {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
   section {
     height: 19.5%;
   }
   #needle {
-    padding-top: 85%;
+    padding-top: 79.5%;
+  }
+  #shuffleBtn {
+    margin-top: 80%;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1030px) {
+@media only screen and (min-width: 1200px) and (orientation: portrait) {
   section {
     height: 19.5%;
   }
   #needle {
-    padding-top: 67.5%;
+    padding-top: 57.5%;
   }
 }

@@ -194,7 +194,7 @@ input:focus {
 h2 {
   font-size: 12px;
   position: fixed;
-  margin-top: 25%;
+  margin-top: 15%;
   white-space: pre-line;
   text-align: left;
   color: #b5b5b5;
@@ -542,5 +542,11 @@ section {
   }
   #needle {
     padding-top: 57.5%;
+  }
+}
+@media only screen and (orientation: landscape) {
+  h2 {
+    font-size: 16px;
+    margin-top: 11%;
   }
 }
